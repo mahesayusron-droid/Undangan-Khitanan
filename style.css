@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f5f7f6;
+    color: #333;
+}
+
+/* COVER */
+#cover {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('background-cover.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.opening {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.nama-cover {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.deskripsi {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffd700cc;
+}
+
+/* HERO */
+.hero {
+    height: 60vh;
+    background: url('Musik.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
+    color: white;
+    border-radius: 15px;
+}
+
+.nama-utama {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.btn-musik {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+
+/* SECTION */
+.section {
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+/* FOTO */
+.foto-bulat {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid gold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* DETAIL */
+.detail-box {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* LOKASI */
+.btn-lokasi {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn-lokasi:hover {
+    background: #1b5e20;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2e7d32;
+    color: white;
+}

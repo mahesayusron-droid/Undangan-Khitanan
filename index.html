@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Khitanan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- COVER -->
+<div id="cover">
+    <div class="cover-overlay">
+        <div class="cover-content">
+            <p class="opening">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+
+            <h1>Undangan Khitanan</h1>
+
+            <h2 class="nama-cover">Faeyza Abizar Zikri</h2>
+
+            <p class="deskripsi">
+                Dengan memohon rahmat dan ridho Allah SWT,<br>
+                kami bermaksud mengundang Bapak/Ibu/Saudara/i<br>
+                untuk menghadiri acara khitanan putra kami.
+            </p>
+
+            <button class="btn" id="openBtn">Buka Undangan</button>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+
+<!-- HERO -->
+<header class="hero">
+    <div class="overlay">
+        <p class="arab-top">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+        <h2>Undangan Khitanan</h2>
+        <h1 class="nama-utama">Faeyza Abizar Zikri</h1>
+
+        <!-- AUDIO -->
+        <audio id="bgMusic" loop>
+            <source src="lagu.mpeg" type="audio/mpeg">
+        </audio>
+
+        <button id="toggleMusic" class="btn-musik">🔊 Musik</button>
+    </div>
+</header>
+
+<!-- UCAPAN -->
+<section class="section ucapan">
+    <div class="container">
+        <h2>Assalamu’alaikum Wr. Wb.</h2>
+
+        <p>Puji syukur ke hadirat Allah SWT atas limpah rahmat serta karunia-Nya.</p>
+
+        <p>
+            Dengan penuh hormat, kami mengundang Bapak/Ibu/Saudara/i
+            untuk hadir dalam acara khitanan putra kami:
+        </p>
+
+        <h2 class="nama-anak">Faeyza Abizar Zikri</h2>
+
+        <p>
+            Ananda dari Bapak <strong>Idrus</strong> & Ibu <strong>Rohani</strong>
+        </p>
+    </div>
+</section>
+
+<!-- GALERI -->
+<section class="section">
+    <div class="container">
+        <div class="galeri">
+            <img src="Foto1.jpeg" class="foto-bulat">
+        </div>
+    </div>
+</section>
+
+<!-- DETAIL -->
+<section class="section">
+    <div class="container card">
+        <h2>📅 Detail Acara</h2>
+
+        <div class="detail-box">
+            <div>
+                <strong>Hari/Tanggal</strong>
+                <p>Minggu, 5 April 2026</p>
+            </div>
+
+            <div>
+                <strong>Waktu</strong>
+                <p>10.30 WITA - Selesai</p>
+            </div>
+
+            <div>
+                <strong>Tempat</strong>
+                <p>
+                Jl. Raya Lembar, Dusun Al-Abroro,<br>
+                Desa Jembatan Kembar Timur
+                </p>
+            </div>
+        </div>
+
+        <div class="lokasi">
+            <a href="https://maps.google.com/?q=Jembatan+Kembar+Timur+Lombok" target="_blank" class="btn-lokasi">
+                📍 Lihat Lokasi
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Terima kasih atas kehadiran dan doa restunya 🙏</p>
+</footer>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+    const btn = document.getElementById("openBtn");
+    const music = document.getElementById("bgMusic");
+    const toggle = document.getElementById("toggleMusic");
+
+    let isPlaying = false;
+
+    btn.addEventListener("click", function() {
+
+        // Play musik
+        music.play();
+        isPlaying = true;
+
+        // Scroll
+        document.getElementById("main").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+    // Tombol kontrol musik
+    toggle.addEventListener("click", function(){
+        if(isPlaying){
+            music.pause();
+            toggle.innerHTML = "🔇 Musik";
+        } else {
+            music.play();
+            toggle.innerHTML = "🔊 Musik";
+        }
+        isPlaying = !isPlaying;
+    });
+</script>
+
+</body>
+</html>
