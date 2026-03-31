@@ -24,6 +24,10 @@
                 untuk menghadiri acara khitanan putra kami.
             </p>
 
+            <!-- NAMA TAMU -->
+            <p class="tamu">Kepada Yth:</p>
+            <h3 id="namaTamu">Tamu Undangan</h3>
+
             <button class="btn" id="openBtn">Buka Undangan</button>
         </div>
     </div>
@@ -71,7 +75,7 @@
 <section class="section">
     <div class="container">
         <div class="galeri">
-            <img src="Foto1.jpeg" class="foto-bulat">
+            <img src="foto1.png" class="foto-bulat">
         </div>
     </div>
 </section>
@@ -84,16 +88,17 @@
         <div class="detail-box">
             <div>
                 <strong>Hari/Tanggal</strong>
-                <p>Minggu, 5 April 2026</p>
+                <p id="tanggal">Minggu, 5 April 2026</p>
             </div>
 
             <div>
                 <strong>Waktu</strong>
-                <p>10.30 WITA - Selesai</p>
+                <p id="waktu">10.30 WITA - Selesai</p>
             </div>
 
             <div>
                 <strong>Tempat</strong>
+                <p>Kediaman kami,</p>
                 <p>
                 Jl. Raya Lembar, Dusun Al-Abroro,<br>
                 Desa Jembatan Kembar Timur
@@ -124,17 +129,21 @@
 
     let isPlaying = false;
 
+    // Klik buka undangan
     btn.addEventListener("click", function() {
 
-        // Play musik
-        music.play();
+        music.muted = false;
+        const playPromise = music.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+        }
+
         isPlaying = true;
 
-        // Scroll
         document.getElementById("main").scrollIntoView({
             behavior: "smooth"
         });
-
     });
 
     // Tombol kontrol musik
@@ -148,6 +157,32 @@
         }
         isPlaying = !isPlaying;
     });
+
+    // ==========================
+    // PARAMETER DARI LINK
+    // ==========================
+    const params = new URLSearchParams(window.location.search);
+
+    const nama = params.get("to");
+    const tgl = params.get("tgl");
+    const waktu = params.get("waktu");
+
+    // NAMA TAMU
+    if(nama){
+        document.getElementById("namaTamu").innerText = nama;
+    } else {
+        document.getElementById("namaTamu").innerText = "Tamu Undangan";
+    }
+
+    // TANGGAL
+    if(tgl){
+        document.getElementById("tanggal").innerText = tgl;
+    }
+
+    // WAKTU
+    if(waktu){
+        document.getElementById("waktu").innerText = waktu;
+    }
 </script>
 
 </body>
